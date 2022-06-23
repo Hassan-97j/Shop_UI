@@ -9,7 +9,7 @@ class CustomTheme {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
-    textTheme: GoogleFonts.varelaRoundTextTheme(),
+    textTheme: GoogleFonts.oxygenMonoTextTheme(),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     primaryColor: LightColors.primaryColorlight,
     primaryColorDark: LightColors.black,
@@ -59,7 +59,7 @@ class CustomTheme {
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
-    textTheme: GoogleFonts.varelaRoundTextTheme(),
+    textTheme: GoogleFonts.oxygenMonoTextTheme(),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     primaryColor: DarkColors.primaryColordark,
     primaryColorDark: DarkColors.white,
