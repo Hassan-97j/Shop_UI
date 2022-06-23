@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../../constants.dart';
-
+import 'package:get/get.dart';
+import 'package:stylish/themes/consts/consts.dart';
+import 'package:stylish/themes/forlightmode/colorslight.dart';
 
 const OutlineInputBorder outlineInputBorder = OutlineInputBorder(
   borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -20,32 +20,39 @@ class SearchForm extends StatelessWidget {
       child: TextFormField(
         onSaved: (value) {},
         decoration: InputDecoration(
-          filled: true,
-          fillColor: Colors.white,
+          // filled: true,
+          // fillColor: Get.theme.scaffoldBackgroundColor,
           hintText: "Search items...",
-          border: outlineInputBorder,
-          enabledBorder: outlineInputBorder,
-          focusedBorder: outlineInputBorder,
-          errorBorder: outlineInputBorder,
+          // border: outlineInputBorder,
+          // enabledBorder: outlineInputBorder,
+          // focusedBorder: outlineInputBorder,
+          // errorBorder: outlineInputBorder,
           prefixIcon: Padding(
             padding: const EdgeInsets.all(14),
-            child: SvgPicture.asset("assets/icons/Search.svg"),
+            child: SvgPicture.asset(
+              "assets/icons/Search.svg",
+              color: LightColors.cursorColor,
+            ),
           ),
           suffixIcon: Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: defaultPadding, vertical: defaultPadding / 2),
+            padding: EdgeInsets.symmetric(
+                horizontal: PAddingsandRadius.defaultPadding,
+                vertical: PAddingsandRadius.defaultPadding / 2),
             child: SizedBox(
               width: 48,
               height: 48,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: primaryColor,
+                  primary: context.theme.primaryColor, //primaryColor,
                   shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(12)),
                   ),
                 ),
                 onPressed: () {},
-                child: SvgPicture.asset("assets/icons/Filter.svg"),
+                child: SvgPicture.asset(
+                  "assets/icons/Filter.svg",
+                  color: context.theme.scaffoldBackgroundColor,
+                ),
               ),
             ),
           ),

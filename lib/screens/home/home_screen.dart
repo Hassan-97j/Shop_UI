@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:stylish/constants.dart';
+import 'package:get/get.dart';
+import 'package:stylish/themes/consts/consts.dart';
 
 import 'components/categories.dart';
 import 'components/new_arrival_products.dart';
@@ -22,10 +23,9 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset("assets/icons/Location.svg"),
-            const SizedBox(width: defaultPadding / 2),
-            Text(
+            SizedBox(width: PAddingsandRadius.defaultPadding / 2),
+            const Text(
               "15/2 New Texas",
-              style: Theme.of(context).textTheme.bodyText1,
             ),
           ],
         ),
@@ -39,24 +39,28 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(
             parent: AlwaysScrollableScrollPhysics()),
-        padding: const EdgeInsets.all(defaultPadding),
+        padding: EdgeInsets.all(PAddingsandRadius.defaultPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Explore",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline4!
-                  .copyWith(fontWeight: FontWeight.w500, color: Colors.black),
+              style: context.theme.textTheme.headline4!.copyWith(
+                fontWeight: FontWeight.w500,
+                color: context.theme.primaryColorDark,
+              ),
             ),
-            const Text(
-              "best Outfits for you",
-              style: TextStyle(fontSize: 18),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: defaultPadding),
-              child: SearchForm(),
+            Text("best Outfits for you",
+                style: context.theme.textTheme.bodyText2!.copyWith(
+                  fontSize: 18,
+                  color: context.theme.primaryColorDark,
+                )
+                //TextStyle(fontSize: 18),
+                ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  vertical: PAddingsandRadius.defaultPadding),
+              child: const SearchForm(),
             ),
             const Categories(),
             const NewArrivalProducts(),

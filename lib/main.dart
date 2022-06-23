@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:stylish/constants.dart';
 import 'package:stylish/screens/home/home_screen.dart';
+import 'package:stylish/themes/customtheme/mytheme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,18 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Shop',
-      theme: ThemeData(
-        scaffoldBackgroundColor: bgColor,
-        primarySwatch: Colors.blue,
-        fontFamily: "Gordita",
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-        ),
-        textTheme: const TextTheme(
-          bodyText2: TextStyle(color: Colors.black54),
-        ),
-      ),
+      theme: CustomTheme.lightTheme,
       home: const HomeScreen(),
     );
   }

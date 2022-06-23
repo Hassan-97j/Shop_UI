@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:stylish/models/product.dart';
 import 'package:stylish/screens/details/details_screen.dart';
+import 'package:stylish/themes/consts/consts.dart';
 
-import '../../../constants.dart';
 import 'product_card.dart';
 import 'section_title.dart';
 
@@ -16,7 +16,8 @@ class NewArrivalProducts extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: defaultPadding),
+          padding:
+              EdgeInsets.symmetric(vertical: PAddingsandRadius.defaultPadding),
           child: SectionTitle(
             title: "New Arrival",
             pressSeeAll: () {},
@@ -30,13 +31,17 @@ class NewArrivalProducts extends StatelessWidget {
             children: List.generate(
               demo_product.length,
               (index) => Padding(
-                padding: const EdgeInsets.only(right: defaultPadding),
+                padding:
+                    EdgeInsets.only(right: PAddingsandRadius.defaultPadding),
                 child: ProductCard(
                   title: demo_product[index].title,
                   image: demo_product[index].image,
                   price: demo_product[index].price,
                   bgColor: demo_product[index].bgColor,
                   press: () {
+                    // Get.to(
+                    //   () => DetailsScreen(product: demo_product[index]),
+                    // );
                     Navigator.push(
                         context,
                         MaterialPageRoute(

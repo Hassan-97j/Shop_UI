@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../../constants.dart';
+import 'package:stylish/themes/consts/consts.dart';
+import 'package:stylish/themes/forlightmode/colorslight.dart';
 
 class ColorDot extends StatelessWidget {
   const ColorDot({
@@ -15,9 +15,13 @@ class ColorDot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(defaultPadding / 4),
+      padding: EdgeInsets.all(PAddingsandRadius.defaultPadding / 4),
       decoration: BoxDecoration(
-        border: Border.all(color: isActive ? primaryColor : Colors.transparent),
+        border: Border.all(
+          color: isActive
+              ? LightColors.primaryColorlight
+              : LightColors.appbarColor,
+        ),
         shape: BoxShape.circle,
       ),
       child: CircleAvatar(

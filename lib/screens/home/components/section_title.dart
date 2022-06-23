@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
@@ -16,16 +17,18 @@ class SectionTitle extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                color: Colors.black,
-                fontWeight: FontWeight.w500,
-              ),
+          style: context.theme.textTheme.subtitle1!.copyWith(
+            color: context.theme.primaryColorDark,
+            fontWeight: FontWeight.w500,
+          ),
         ),
         TextButton(
           onPressed: pressSeeAll,
-          child: const Text(
+          child: Text(
             "See All",
-            style: TextStyle(color: Colors.black54),
+            style: context.theme.textTheme.subtitle1!.copyWith(
+              color: context.theme.primaryColorDark.withOpacity(0.46),
+            ),
           ),
         )
       ],

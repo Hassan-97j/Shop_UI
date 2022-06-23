@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:stylish/constants.dart';
+import 'package:get/get.dart';
 import 'package:stylish/models/product.dart';
+import 'package:stylish/themes/consts/consts.dart';
+import 'package:stylish/themes/forlightmode/colorslight.dart';
 
 import 'components/color_dot.dart';
 
@@ -13,14 +15,14 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: product.bgColor,
+      //backgroundColor: product.bgColor,
       appBar: AppBar(
-        leading: const BackButton(color: Colors.black),
+        leading: BackButton(color: context.theme.primaryColorDark),
         actions: [
           IconButton(
             onPressed: () {},
             icon: CircleAvatar(
-              backgroundColor: Colors.white,
+              backgroundColor: context.theme.scaffoldBackgroundColor,
               child: SvgPicture.asset(
                 "assets/icons/Heart.svg",
                 height: 20,
@@ -36,16 +38,22 @@ class DetailsScreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.4,
             fit: BoxFit.cover,
           ),
-          const SizedBox(height: defaultPadding * 1.5),
+          SizedBox(height: PAddingsandRadius.defaultPadding * 1.5),
           Expanded(
             child: Container(
-              padding: const EdgeInsets.fromLTRB(defaultPadding,
-                  defaultPadding * 2, defaultPadding, defaultPadding),
-              decoration: const BoxDecoration(
-                color: Colors.white,
+              padding: EdgeInsets.fromLTRB(
+                PAddingsandRadius.defaultPadding,
+                PAddingsandRadius.defaultPadding * 2,
+                PAddingsandRadius.defaultPadding,
+                PAddingsandRadius.defaultPadding,
+              ),
+              decoration: BoxDecoration(
+                color: context.theme.scaffoldBackgroundColor,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(defaultBorderRadius * 3),
-                  topRight: Radius.circular(defaultBorderRadius * 3),
+                  topLeft: Radius.circular(
+                      PAddingsandRadius.defaultBorderRadius * 3),
+                  topRight: Radius.circular(
+                      PAddingsandRadius.defaultBorderRadius * 3),
                 ),
               ),
               child: Column(
@@ -56,27 +64,37 @@ class DetailsScreen extends StatelessWidget {
                       Expanded(
                         child: Text(
                           product.title,
-                          style: Theme.of(context).textTheme.headline6,
+                          style: context.theme.textTheme.headline6!.copyWith(
+                            color: context.theme.primaryColorDark,
+                          ),
                         ),
                       ),
-                      const SizedBox(width: defaultPadding),
+                      SizedBox(width: PAddingsandRadius.defaultPadding),
                       Text(
                         "\$${product.price}",
-                        style: Theme.of(context).textTheme.headline6,
+                        style: context.theme.textTheme.headline6!.copyWith(
+                          color: context.theme.primaryColorDark,
+                        ),
                       ),
                     ],
                   ),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: PAddingsandRadius.defaultPadding),
                     child: Text(
                       "A Henley shirt is a collarless pullover shirt, by a round neckline and a placket about 3 to 5 inches (8 to 13 cm) long and usually having 2–5 buttons.",
+                      style: context.theme.textTheme.subtitle2!.copyWith(
+                        color: context.theme.primaryColorDark,
+                      ),
                     ),
                   ),
                   Text(
                     "Colors",
-                    style: Theme.of(context).textTheme.subtitle2,
+                    style: context.theme.textTheme.subtitle2!.copyWith(
+                      color: context.theme.primaryColorDark,
+                    ),
                   ),
-                  const SizedBox(height: defaultPadding / 2),
+                  SizedBox(height: PAddingsandRadius.defaultPadding / 2),
                   Row(
                     children: const [
                       ColorDot(
@@ -93,7 +111,7 @@ class DetailsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const SizedBox(height: defaultPadding * 2),
+                  SizedBox(height: PAddingsandRadius.defaultPadding * 2),
                   Center(
                     child: SizedBox(
                       width: 200,
@@ -101,9 +119,14 @@ class DetailsScreen extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                            primary: primaryColor,
+                            primary: LightColors.primaryColorlight,
                             shape: const StadiumBorder()),
-                        child: const Text("Add to Cart"),
+                        child: Text(
+                          "Add to Cart",
+                          style: context.theme.textTheme.subtitle2!.copyWith(
+                            color: context.theme.primaryColorLight,
+                          ),
+                        ),
                       ),
                     ),
                   )

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:stylish/models/category.dart';
-
-import '../../../constants.dart';
+import 'package:stylish/themes/consts/consts.dart';
 
 class Categories extends StatelessWidget {
   const Categories({
@@ -22,7 +22,7 @@ class Categories extends StatelessWidget {
           press: () {},
         ),
         separatorBuilder: (context, index) =>
-            const SizedBox(width: defaultPadding),
+            SizedBox(width: PAddingsandRadius.defaultPadding),
       ),
     );
   }
@@ -44,20 +44,24 @@ class CategoryCard extends StatelessWidget {
     return OutlinedButton(
       onPressed: press,
       style: OutlinedButton.styleFrom(
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(defaultBorderRadius)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+              Radius.circular(PAddingsandRadius.defaultBorderRadius)),
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: defaultPadding / 2, horizontal: defaultPadding / 4),
+        padding: EdgeInsets.symmetric(
+            vertical: PAddingsandRadius.defaultPadding / 2,
+            horizontal: PAddingsandRadius.defaultPadding / 4),
         child: Column(
           children: [
             SvgPicture.asset(icon),
-            const SizedBox(height: defaultPadding / 2),
+            SizedBox(height: PAddingsandRadius.defaultPadding / 2),
             Text(
               title,
-              style: Theme.of(context).textTheme.subtitle2,
+              style: context.theme.textTheme.subtitle2!.copyWith(
+                color: context.theme.primaryColorDark,
+              ),
             )
           ],
         ),
