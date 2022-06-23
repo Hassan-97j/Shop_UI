@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stylish/models/Product.dart';
+import 'package:stylish/models/product.dart';
 
 import '../../../constants.dart';
 import 'product_card.dart';

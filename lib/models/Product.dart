@@ -13,6 +13,7 @@ class Product {
   });
 }
 
+// ignore: non_constant_identifier_names
 List<Product> demo_product = [
   Product(
     image: "assets/images/product_0.png",

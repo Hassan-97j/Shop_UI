@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'The Flutter Way',
+      title: 'Shop',
       theme: ThemeData(
         scaffoldBackgroundColor: bgColor,
         primarySwatch: Colors.blue,

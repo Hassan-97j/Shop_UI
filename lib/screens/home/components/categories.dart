@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:stylish/models/Category.dart';
+import 'package:stylish/models/category.dart';
 
 import '../../../constants.dart';
 

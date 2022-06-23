@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stylish/models/Product.dart';
+import 'package:stylish/models/product.dart';
 import 'package:stylish/screens/details/details_screen.dart';
 
 import '../../../constants.dart';
