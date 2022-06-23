@@ -18,15 +18,12 @@ class SearchForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
       child: TextFormField(
+        style: Get.theme.textTheme.bodyText1!.copyWith(
+          color: Get.theme.primaryColorDark,
+        ),
         onSaved: (value) {},
         decoration: InputDecoration(
-          // filled: true,
-          // fillColor: Get.theme.scaffoldBackgroundColor,
           hintText: "Search items...",
-          // border: outlineInputBorder,
-          // enabledBorder: outlineInputBorder,
-          // focusedBorder: outlineInputBorder,
-          // errorBorder: outlineInputBorder,
           prefixIcon: Padding(
             padding: const EdgeInsets.all(14),
             child: SvgPicture.asset(

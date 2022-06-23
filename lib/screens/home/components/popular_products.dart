@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:stylish/models/product.dart';
 import 'package:stylish/themes/consts/consts.dart';
 import 'product_card.dart';
@@ -35,7 +36,8 @@ class PopularProducts extends StatelessWidget {
                   title: demo_product[index].title,
                   image: demo_product[index].image,
                   price: demo_product[index].price,
-                  bgColor: demo_product[index].bgColor,
+                  bgColor: context
+                      .theme.primaryColorLight, //demo_product[index].bgColor,
                   press: () {},
                 ),
               ),
