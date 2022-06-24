@@ -41,15 +41,14 @@ class NewArrivalProducts extends StatelessWidget {
                   bgColor: context
                       .theme.primaryColorLight, //demo_product[index].bgColor,
                   press: () {
-                    // Get.to(
-                    //   () => DetailsScreen(product: demo_product[index]),
-                    // );
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              DetailsScreen(product: demo_product[index]),
-                        ));
+                    Get.to(
+                        () => DetailsScreen(
+                              product: demo_product[index],
+                            ),
+                        opaque: true,
+                        transition: Transition.zoom,
+                        curve: Curves.easeIn,
+                        duration: const Duration(milliseconds: 1200));
                   },
                 ),
               ),

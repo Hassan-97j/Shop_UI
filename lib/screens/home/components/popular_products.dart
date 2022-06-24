@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:stylish/models/product.dart';
+import 'package:stylish/screens/details/details_screen.dart';
 import 'package:stylish/themes/consts/consts.dart';
 import 'product_card.dart';
 import 'section_title.dart';
@@ -38,7 +39,16 @@ class PopularProducts extends StatelessWidget {
                   price: demo_product[index].price,
                   bgColor: context
                       .theme.primaryColorLight, //demo_product[index].bgColor,
-                  press: () {},
+                  press: () {
+                     Get.to(
+                        () => DetailsScreen(
+                              product: demo_product[index],
+                            ),
+                        opaque: true,
+                        transition: Transition.zoom,
+                        curve: Curves.easeIn,
+                        duration: const Duration(milliseconds: 1200));
+                  },
                 ),
               ),
             ),

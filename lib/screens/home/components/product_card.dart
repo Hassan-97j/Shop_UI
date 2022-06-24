@@ -37,9 +37,12 @@ class ProductCard extends StatelessWidget {
                 borderRadius: BorderRadius.all(
                     Radius.circular(PAddingsandRadius.defaultBorderRadius)),
               ),
-              child: Image.asset(
-                image,
-                height: 132,
+              child: Hero(
+                tag: 'image',
+                child: Image.asset(
+                  image,
+                  height: 132,
+                ),
               ),
             ),
             SizedBox(height: PAddingsandRadius.defaultPadding / 2),

@@ -33,10 +33,13 @@ class DetailsScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.asset(
-            product.image,
-            height: MediaQuery.of(context).size.height * 0.4,
-            fit: BoxFit.cover,
+          Hero(
+            tag: 'image',
+            child: Image.asset(
+              product.image,
+              height: MediaQuery.of(context).size.height * 0.4,
+              fit: BoxFit.cover,
+            ),
           ),
           SizedBox(height: PAddingsandRadius.defaultPadding * 1.5),
           Expanded(
